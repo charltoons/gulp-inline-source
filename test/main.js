@@ -52,3 +52,10 @@ test('inlines assets without minification', function (t) {
     compare(stream, 'nominify.html', 'inlined-nominify.html', t);
 });
 
+test('inlines assets and preserves attributes if passed the option', function(t){
+    var stream = inlinesource({
+      preserveAttributes: true
+    });
+
+    compare(stream, 'preserve-attributes.html', 'inlined-preserve-attributes.html', t);
+});
